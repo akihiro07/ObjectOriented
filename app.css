@@ -1,0 +1,188 @@
+/* 点滅させたい(animation) */
+/* 参考：https://qiita.com/7968/items/1d999354e00db53bcbd8 */
+/* @keyframes:アニメーション開始から終了するまでどのようなアニメーションをするのか指定できるCSSの文法 */
+@keyframes blink {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+/* スタート画面 */
+#start-area{
+  height: 100vh;
+  background: #000;
+}
+.title{
+  text-align: center;
+  padding-top: 35vh;
+}
+.title img{
+  width: 70vh;
+}
+.start-frame{
+  text-align: center;
+  margin-top: 10vh;
+}
+.start-frame input[name="start"]{
+  font-size: 2em;
+  padding: 1vh 3vh;
+  border: none;
+  border-radius: 5px;
+}
+.start-frame input[name="start"]:hover{
+  cursor: pointer;
+  /* 点滅させたい */
+  animation: blink 2s ease-in-out infinite;
+}
+
+/* バトル画面 */
+#battle{
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+/* バトル画面の相手エリア */
+#opponent-area{
+  background-image: url("img/background.png");
+  background-size: cover;
+  width: 68%;
+  text-align: center;
+}
+.opponent-name{
+  margin: 50px;
+  font-size: 2.3em;
+  font-weight: bold;
+}
+.image{
+  width: 560px;
+  height: 560px;
+}
+.opponent-hp{
+  font-size: 1.8em;
+}
+/* バトル画面の自分のエリア */
+#myself-area{
+  width: 32%;
+  font-size: 1em;
+  background: #000;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+/* バトル画面の自分のエリアの共通部分 */
+.myself-frame{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: normal;
+}
+.myself-frame:first-child{
+  margin-top: 0;
+}
+.history-frame{
+  padding: 20px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 60vh;
+  overflow: scroll;
+}
+.kill-frame{
+}
+.hp-frame{
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
+}
+.hp-frame .hp-val{
+  width: 32%;
+  line-height: 5vh;
+}
+.hp-frame .hp-gage{
+  width: 68%;
+  height: 3vh;
+  margin: auto;
+}
+.behavior-frame{
+  padding: 10px 40px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+.behavior-frame input[type='submit']{
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+.behavior-frame input[type='submit']:hover{
+  cursor: pointer;
+  animation: blink 1.5s ease-in-out infinite;
+}
+.button-top{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.button-top input[type='submit']{
+  padding: 4px 10px;
+  box-sizing: border-box;
+}
+.button-bottom{
+  text-align: center;
+  margin-top: 85px;
+}
+.button-bottom input[type='submit']{
+  padding: 4px 30px;
+  box-sizing: border-box;
+}
+
+/* ============================== */
+/*          リセットCSS            */
+/* ============================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
